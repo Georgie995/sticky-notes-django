@@ -1,0 +1,19 @@
+# Research answers – Sticky Notes Application (Part 2)
+
+1. How websites remember users (HTTP state, sessions, cookies)
+
+HTTP is a stateless protocol, which means each request is handled independently and does not remember previous actions. To allow websites to remember users, cookies and sessions are used.
+
+A cookie is a small piece of data stored in the user’s browser. When a user logs in, the server creates a session and sends a session ID back to the browser as a cookie. The browser then sends this cookie with every future request. The server uses the session ID to identify the user and retrieve information such as login status or user-specific data.
+
+In Django, this process is handled by the built-in session framework. Django stores session data on the server and only keeps the session ID in the browser, allowing users to stay logged in while navigating the site.
+
+
+
+2. Changing a Django project from SQLite to MariaDB
+
+SQLite is a file-based database that is useful for development, but production systems usually use databases such as MariaDB.
+
+To switch from SQLite to MariaDB in a Django project, MariaDB must first be installed and a database and user created. A compatible Python database driver such as mysqlclient is then installed. After this, the DATABASES setting in settings.py is updated to use the MySQL/MariaDB backend along with the correct connection details.
+
+Once the settings are changed, Django’s migration commands are run to create the database tables in MariaDB. From that point onward, Django’s ORM continues to work the same way, but the data is stored in MariaDB instead of SQLite.

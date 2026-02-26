@@ -1,0 +1,1 @@
+https://github.com/Georgie995/sticky-notes-django.git
